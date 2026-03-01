@@ -1,11 +1,14 @@
 pipeline {
   agent any
 
+  tools {
+    nodejs 'node18'
+  }
+
   stages {
     stage('Build') {
       steps {
         sh '''
-          ls -la
           node --version
           npm --version
           npm ci
